@@ -34,20 +34,22 @@
 <body>
 
     <div id="wrapper">
-
-
-        <nav class="navbar-default navbar-static-side" role="navigation">
+        <nav class="navbar-default navbar-static-side" role="navigation" style="background-color: white;">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element text-center">
                             <img alt="image" class="rounded-circle" src="./public/images/eac-logo.png" style="width:85px !important; height:60px !important;"/>
                         </div>
-                        <div class="logo-element">
+                        <div class="logo-element" style="background-color: white;">
                             <img alt="image" class="rounded-circle" src="./public/images/eac-logo.png" style="width:50px !important; height:40px !important;"/>
                         </div>
                     </li>
                  
+                    <li>
+                        <a href="applicant-dashboard.html"><i class="fa fa-home"></i> <span class="nav-label">Applicant Dashboard</span></a>
+                    </li>
+
                     <li>
                         <a href="notifications.html"><i class="fa fa-bell"></i> <span class="nav-label">Notifications</span></a>
                     </li>
@@ -56,11 +58,10 @@
                         <a href="profile.html"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 </ul>
-    
             </div>
         </nav>
 
-        <div id="page-wrapper" class="gray-bg">
+        <div id="page-wrapper" class="gray-bg" style="background-image: url('./public/images/background.jpg');background-size:cover;">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
@@ -87,13 +88,16 @@
                 <div class="col-lg-8">
                     <div class="ibox">
                         <div class="ibox-content">
+                            <div class="container">
+                                <div class="row d-flex justify-content-start">
+                                    <img class="img-md" src="./public/images/tanzania-flag.png" style="height: 40px; width:70px;border-radius:2px;" alt=""> 
+                                </div>
+                            </div>
+                            <br>
+                            
                             <h3 style="font-weight:600;">Payment and Form Submission</h3>
 
-                            <div class="alert alert-warning col-md-8 p-21 d-flex justify-content-center align-items-start" role="alert">
-                                <div class="d-none d-md-flex mr-3 justify-content-center align-items-center rounded-circle mt-2 p-3" style="width:40px; height:40px;background-color:#FFA500;">
-                                    <img src="./public/images/info.png" style="width: 28px;height:28px;" alt="">
-                                </div>
-
+                            <div class="alert alert-warning col-md-8 p-21 d-flex justify-content-start align-items-start" role="alert">
                                 <div class="div">
                                     <h5 style="font-weight:600;color:black;">Your MRA Application form is on hold.</h5>
                                     <p>Your application form will be processed after the required application fee is paid.</p>
@@ -184,7 +188,7 @@
             </div>
         </div>
 
-        <div class="container p-0 ">
+        <div class="container p-0">
             
         </div>
 

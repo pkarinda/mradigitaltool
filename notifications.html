@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Destinations</title>
+    <title>Notifications</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
@@ -35,18 +35,22 @@
 
     <div id="wrapper">
 
-        <nav class="navbar-default navbar-static-side" role="navigation">
+        <nav class="navbar-default navbar-static-side" role="navigation" style="background-color: white;">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element text-center">
                             <img alt="image" class="rounded-circle" src="./public/images/eac-logo.png" style="width:85px !important; height:60px !important;"/>
                         </div>
-                        <div class="logo-element">
+                        <div class="logo-element" style="background-color: white;">
                             <img alt="image" class="rounded-circle" src="./public/images/eac-logo.png" style="width:50px !important; height:40px !important;"/>
                         </div>
                     </li>
                  
+                    <li>
+                        <a href="applicant-dashboard.html"><i class="fa fa-home"></i> <span class="nav-label">Applicant Dashboard</span></a>
+                    </li>
+
                     <li>
                         <a href="notifications.html"><i class="fa fa-bell"></i> <span class="nav-label">Notifications</span></a>
                     </li>
@@ -59,7 +63,7 @@
             </div>
         </nav>
     
-        <div id="page-wrapper" class="gray-bg">
+        <div id="page-wrapper" class="gray-bg" style="background-image: url('./public/images/background.jpg');background-size:cover;">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
@@ -129,18 +133,5 @@
 
     <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="js/plugins/dropzone/dropzone.js"></script>
-
-    
-    <script>
-        Dropzone.options.dropzoneForm = {
-            paramName: "file", // The name that will be used to transfer the file
-            maxFilesize: 2, // MB
-            dictDefaultMessage: '<i class="bi bi-upload" style="font-size:4rem;color:black;"></i></br><span style="color:blue;">Click to upload</span> supporting documents'
-        };
-
-        $(".select2").select2({
-            placeholder: null,
-        });    
-    </script>
 </body>
 </html>
