@@ -46,12 +46,11 @@
           <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
               <div class="dropdown profile-element text-center">
-                <div class="dropdown profile-element text-center">
-                  <img
-                    src="./public/images/eac-logo.png"
-                    alt="EAC Logo"
-                    height="50"
-                    class="logo" />
+                <img
+                  src="./public/images/eac-logo.png"
+                  alt="EAC Logo"
+                  height="50"
+                  class="logo" />
               </div>
               <div class="logo-element" style="background-color: white">
                 <img
@@ -127,7 +126,6 @@
                   <div class="row d-flex justify-content-center">
                     <img
                       class="img-md"
-                      id="flag-container"
                       src="./public/images/tanzania-flag.png"
                       style="height: 40px; width: 70px; border-radius: 2px"
                       alt="" />
@@ -158,63 +156,45 @@
                       </div>
 
                       <div class="form-group">
+                        <label for="password">Select Competent Authority</label>
+                        <select class="form-control rounded-0" id="state">
+                          <option value=""></option>
+                          <option value="kenya">
+                            Engineers Board of Kenya
+                          </option>
+                          <option value="rwanda">
+                            Institution of Engineers Rwanda
+                          </option>
+                          <option value="south-sudan">
+                            South Sudan Engineering Society
+                          </option>
+                          <option value="uganda">
+                            Uganda Engineers Registration Board
+                          </option>
+                          <option value="tanzania">
+                            Engineers Registration Board
+                          </option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
                         <label for="license_number">Home License Number</label>
-                        <input type="text" class="form-control rounded-0" />
-                      </div>
-
-                      <br />
-                      <div class="form-group">
-                        <label
-                          >Upload your valid Professional License (PDF or Image
-                          format)
-                        </label>
                         <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          class="form-control"
-                          style="padding: 3px 12px" />
-                      </div>
-
-                      <br />
-                      <div class="form-group">
-                        <label
-                          >Upload your Academic Degree Certificate (PDF or Image
-                          format)</label
-                        >
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          class="form-control"
-                          style="padding: 3px 12px" />
-                      </div>
-
-                      <br />
-                      <div class="form-group">
-                        <label
-                          >Upload a clear image or PDF of your ID (Passport,
-                          Driver’s License, or National ID)</label
-                        >
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          class="form-control"
-                          style="padding: 3px 12px" />
+                          type="text"
+                          class="form-control rounded-0"
+                          id="license_number" />
                       </div>
                     </form>
 
-                    <div class="form-group m-4">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        id="terms" />
-                      <label class="form-check-label" for="terms"
-                        >I agree to the
-                        <a href="#" style="font-size: 14px"
-                          >Terms & Conditions for
-                          <span id="home-ca">ERB Tanzania</span></a
-                        ></label
-                      >
-                    </div>
+                    <form
+                      action="#"
+                      class="dropzone mt-4"
+                      id="dropzoneForm"
+                      style="border: 1px dashed gray">
+                      <div class="fallback">
+                        <input name="file" type="file" multiple />
+                      </div>
+                    </form>
 
                     <div class="d-flex justify-content-between">
                       <button
@@ -226,7 +206,7 @@
 
                       <button
                         type="button"
-                        id="proceed-btn"
+                        onclick="window.location.href='payment.html'"
                         class="btn btn-primary btn-block mt-4 col-4 col-md-2 rounded-0 border-0"
                         style="background-color: #1d608f">
                         Proceed
@@ -256,38 +236,15 @@
     <script src="js/plugins/dropzone/dropzone.js"></script>
 
     <script>
-      const destination = new URLSearchParams(window.location.search).get(
-        "destination"
-      );
-      const imgElement = document.getElementById("flag-container");
-      imgElement.src = `./public/images/${destination}-flag.png`;
+      Dropzone.options.dropzoneForm = {
+        paramName: "file", // The name that will be used to transfer the file
+        maxFilesize: 2, // MB
+        dictDefaultMessage:
+          '<i class="bi bi-upload" style="font-size:4rem;color:black;"></i></br><p style="font-size:0.8rem;"><span style="color:blue;">Click to upload</span> supporting documents</p>',
+      };
 
-      const competentAuthority = document.getElementById("home-ca");
-      switch (destination) {
-        case "kenya":
-          competentAuthority.textContent = "Engineers Board of Kenya";
-          break;
-        case "rwanda":
-          competentAuthority.textContent = "Institution of Engineers Rwanda";
-          break;
-        case "south-sudan":
-          competentAuthority.textContent = "South Sudan Engineering Society";
-          break;
-        case "uganda":
-          competentAuthority.textContent =
-            "Uganda Engineers Registration Board";
-          break;
-        case "tanzania":
-          competentAuthority.textContent = "Engineers Registration Board";
-          break;
-        default:
-          competentAuthority.textContent = "Engineers Board";
-      }
-
-      const proceedButton = document.getElementById("proceed-btn");
-
-      proceedButton.addEventListener("click", () => {
-        window.location.href = `payment.html?destination=${destination}`;
+      $(".select2").select2({
+        placeholder: null,
       });
     </script>
   </body>
